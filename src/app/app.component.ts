@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   tasks: any[] = [];
   
   // L'URL de ton backend FastAPI local
-  apiUrl = 'https://api-makhtar-wade-roadmap.onrender.com/api/task';
+  apiUrl = 'https://api-makhtar-wade-roadmap.onrender.com/api/tasks';
 
   constructor(private http: HttpClient) {}
 
