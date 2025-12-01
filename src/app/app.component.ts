@@ -14,8 +14,8 @@ export class AppComponent implements OnInit {
   newTitle: string = '';
 
   // Mets ton URL Render ici (ou localhost pour tester)
-  //apiUrl = 'https://api-makhtar-wade-roadmap.onrender.com/api/tasks';
-  apiUrl = 'http://127.0.0.1:8000/api/tasks';
+  apiUrl = 'https://api-makhtar-wade-roadmap.onrender.com/api/tasks';
+  //apiUrl = 'http://127.0.0.1:8000/api/tasks';
 
   constructor(private http: HttpClient) {}
 
