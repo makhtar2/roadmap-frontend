@@ -1,20 +1,28 @@
 <div class="container">
   <header>
     <h1>🚀 Master Plan MLOps</h1>
-    <p>Objectif : Devenir Top 1% au Sénégal</p>
+    <p>Ajoute tes objectifs pour construire ta carrière</p>
   </header>
+
+  <div class="add-form">
+    <input type="text" [(ngModel)]="newWeek" placeholder="Semaine..." class="input-week">
+    <input type="text" [(ngModel)]="newTitle" placeholder="Objectif (ex: Apprendre Docker)" class="input-title">
+    <button (click)="addTask()" class="btn-add">Ajouter</button>
+  </div>
 
   <div class="task-list">
     <div *ngFor="let task of tasks" class="task-card" [class.completed]="task.completed">
       
-      <div class="task-info">
-        <span class="badge">{{ task.week }}</span>
-        <h3>{{ task.title }}</h3>
+      <div class="task-left">
+        <input type="checkbox" [checked]="task.completed" (change)="toggleTask(task)">
+        <div class="task-info">
+          <span class="badge">{{ task.week }}</span>
+          <h3>{{ task.title }}</h3>
+        </div>
       </div>
 
-      <input type="checkbox" 
-             [checked]="task.completed" 
-             (change)="toggleTask(task)">
+      <button (click)="deleteTask(task.id)" class="btn-delete">❌</button>
+    
     </div>
   </div>
 </div>
